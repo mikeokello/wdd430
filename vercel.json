@@ -1,4 +1,7 @@
 {
+  "framework": "nextjs",
+  "buildCommand": "cd portfolio && npm run build",
+  "outputDirectory": ".next",
   "rootDirectory": "portfolio"
 }
 

@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "type": "commonjs",
 
+
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rmdir /s /q .next 2>nul & next build",
     "start": "next start",
     "lint": "next lint"
   },
