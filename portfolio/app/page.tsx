@@ -1,58 +1,54 @@
+import Image from "next/image";
 import Link from "next/link";
-import ProjectList from "@/components/ProjectList";
-
-const projects = [
-  {
-    title: "E-Commerce Dashboard",
-    description:
-      "A full-stack Next.js app for managing products, orders, and inventory with a responsive admin panel.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
-    link: "https://github.com/Your-Username/ecommerce-dashboard",
-  },
-  {
-    title: "Weather Application",
-    description:
-      "A React app that fetches and displays real-time weather data for any city using a public API.",
-    technologies: ["React", "JavaScript", "CSS", "OpenWeather API"],
-    link: "https://github.com/Your-Username/weather-app",
-  },
-];
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <section className="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 px-8 py-12 text-white shadow-lg">
-        <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-100">
-            Web Developer Portfolio
-          </p>
-          <h1 className="text-4xl font-bold sm:text-5xl">Building thoughtful web experiences with modern tools.</h1>
-          <p className="mt-4 text-lg text-blue-50">
-            I am a full-stack developer learning Next.js, TypeScript, and the App Router. I enjoy creating clean, responsive, and user-focused applications.
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="grid gap-8 rounded-3xl bg-gradient-to-r from-amber-600 via-orange-500 to-rose-500 px-6 py-10 text-white shadow-xl sm:px-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-100">WDD430 Week 02</p>
+          <h1 className="text-4xl font-bold sm:text-5xl">
+            Plan sacrament meetings with clarity and purpose.
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-amber-50">
+            Review announcements, hymns, speakers, prayer leaders, and ward business in one organized place.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/about"
-              className="rounded-full bg-white px-5 py-2.5 font-semibold text-blue-700 transition hover:bg-blue-50"
-            >
-              Learn More About Me
+            <Link href="/meetings" className="rounded-full bg-white px-5 py-2.5 font-semibold text-amber-700 transition hover:bg-amber-50">
+              View meeting programs
             </Link>
-            <a
-              href="#projects"
-              className="rounded-full border border-blue-200 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10"
-            >
-              View Projects
-            </a>
+            <Link href="/meetings/current" className="rounded-full border border-white/70 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10">
+              Jump to current Sunday
+            </Link>
           </div>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-white/30 bg-white/10 p-2 backdrop-blur">
+          <Image
+            src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80"
+            alt="Church meeting hall with an organized program table"
+            width={700}
+            height={480}
+            className="h-full w-full rounded-xl object-cover"
+          />
         </div>
       </section>
 
-      <section id="projects" className="mt-10">
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold text-gray-900">Featured Projects</h2>
-          <p className="mt-2 text-gray-600">A selection of recent work that reflects my growth as a developer.</p>
+      <section className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <h2 className="text-2xl font-semibold text-slate-900">What this planner includes</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl bg-slate-50 p-5">
+            <h3 className="font-semibold text-slate-900">Weekly agenda</h3>
+            <p className="mt-2 text-sm text-slate-600">Track opening hymns, prayers, ward business, and closing music for each meeting.</p>
+          </div>
+          <div className="rounded-2xl bg-slate-50 p-5">
+            <h3 className="font-semibold text-slate-900">Typed data model</h3>
+            <p className="mt-2 text-sm text-slate-600">Each meeting uses a structured TypeScript interface for reliable content handling.</p>
+          </div>
+          <div className="rounded-2xl bg-slate-50 p-5">
+            <h3 className="font-semibold text-slate-900">Accessible navigation</h3>
+            <p className="mt-2 text-sm text-slate-600">Links and routes support easy browsing between the full list and each meeting detail.</p>
+          </div>
         </div>
-        <ProjectList projects={projects} />
       </section>
     </div>
   );
