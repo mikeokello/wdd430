@@ -3,18 +3,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "WDD430 Portfolio",
-  description: "My First Next.js Application",
+  title: "Sacrament Meeting Planner",
+  description: "A Next.js planner for sacrament meeting agendas and program details",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
